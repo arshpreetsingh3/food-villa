@@ -1,6 +1,6 @@
 const Footer = () =>{
     return(
-        <div className="my-44 py-3  text-center text-xl bg-pink-50"> 
+        <div className="my-44 py-3 mt-auto text-center text-xl bg-pink-50"> 
             <h1>Coming Soon with ❤️ </h1>
         </div>
     )

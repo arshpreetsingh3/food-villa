@@ -84,9 +84,11 @@ const AppLayout = () => {
         user: user,
         setUser: setUser,
       }}>
+        <div className="flex flex-col min-h-screen">
             <HeaderComponent />
             <Outlet />
             <Footer />
+            </div>
 
         </UserContext.Provider>
    </Provider>

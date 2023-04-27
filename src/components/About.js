@@ -53,7 +53,7 @@ class About extends React.Component {
         file component can also be called directly without outlet in that case just call <Profile/>
           */}
             <div className="flex-1 flex justify-center items-center font-poppins bg-slate-50">
-      <div className="flex flex-col justify-center items-center mt-4 gap-5 shadow-lg border w-fit max-w-xs">
+      <div className="flex flex-col justify-center items-center mt-9 gap-5 shadow-lg border h-2/3 w-fit max-w-xs">
         <p className="font-medium text-xl w-full text-center py-2">About Me</p>
         <img
           className="rounded-full w-[150px] h-[150px] border-none align-middle"
