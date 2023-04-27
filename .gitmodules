@@ -1,0 +1,3 @@
+[submodule "path_to_submodule"] 
+  path = dist
+  url = git://https://github.com/arshpreetsingh3/food-villa.git
