@@ -1,3 +1,5 @@
 .parcel-cache
 node_modules
 /coverage
+# Local Netlify folder
+.netlify

@@ -30,8 +30,8 @@ const RestaurantMenu = () => {
   
   return (!restaurant) ? <Shimmer/> : (
     <div className='flex'>
-        <div>
-            <h1>Restaurant id: {id} </h1>
+        <div className='font-bold'>
+            {/* <h1>Restaurant id: {id} </h1> */}
             {/**
              * <h2>        <h2>{restaurant?.cards[0]?.card?.card?.info?.cloudinaryImageId}</h2> </h2>
              *             <h4>{console.log(Object.values(restaurant?.cards[0]?.card?.card?.info)}</h4>
@@ -45,7 +45,7 @@ const RestaurantMenu = () => {
             </div>
             */}
             <h2>{restaurant?.cards[0]?.card?.card?.info?.name}</h2>
-            <img src = {IMG_CDN_URL + restaurant?.cards[0]?.card?.card?.info?.cloudinaryImageId}  />
+            <img className='rounded-sm hover:shadow-xl duration-300 font-poppins bg-white shadow-sm' src = {IMG_CDN_URL + restaurant?.cards[0]?.card?.card?.info?.cloudinaryImageId}  />
             <h3> {restaurant?.cards[0]?.card?.card?.info?.city}</h3>
             <h3> {restaurant?.cards[0]?.card?.card?.info?.areaName}</h3>
         </div>
@@ -53,7 +53,7 @@ const RestaurantMenu = () => {
             <button className="p-2 m-5 bg-green-300" onClick={()=> handleAddItem()}>Add Item</button>
         </div> */}
          <div className="p-5">
-            <h1>MENU</h1>
+            <h1 className='font-semibold'>MENU</h1>
             <ul>
                 <li>{restaurant?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards[0]?.card?.info?.name}- <button className="p-1 bg-green-300" onClick={() => addFoodItem(restaurant?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards[0]?.card?.info)}>ADD</button></li>
                 <li>{restaurant?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards[1]?.card?.info?.name}- <button className="p-1 bg-green-300" onClick={() => addFoodItem(restaurant?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards[1]?.card?.info)}>ADD</button></li>

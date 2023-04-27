@@ -23,15 +23,15 @@ const Instamart = () => {
     <div>
 
         <Section title={"About Instamart"}
-         description={"This is the about section"}
+         description={"We are soon launching a quick grocery delivery mart!"}
          isVisible = {visibleSection === "about"}
          setIsVisible={()=> setVisibleSection("about")}/>
         <Section title={"Team Instamart"}
-         description={"This is the team section"}
+         description={"We are currently building a team for this!"}
          isVisible = {visibleSection === "team"}
          setIsVisible={()=> setVisibleSection("team")}/>
         <Section title={"Careers Instamart"}
-         description={"This is the career section"}
+         description={"We will let you know soon when we hire!"}
          isVisible = {visibleSection === "careers"}
          setIsVisible={()=> setVisibleSection("careers")}/>
          {

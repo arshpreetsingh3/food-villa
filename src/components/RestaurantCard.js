@@ -47,14 +47,31 @@ const RestrauntCard2 = ({restaurant})=> {
 
 
 //Object destructuring on the fly
-const RestrauntCard3 = ({name,cuisines,cloudinaryImageId,lastMileTravelString})=> {
+const RestrauntCard3 = ({name,cuisines,cloudinaryImageId,lastMileTravelString,avgRating,costForTwoString,deliveryTime})=> {
     const {user} = useContext(UserContext);
     return (
-        <div className="w-48 p-2 m-2 shadow-lg bg-gray-100">
-            <img src={IMG_CDN_URL + cloudinaryImageId}/>
-            <h2 className="font-bold text-lg">{name}</h2>
-            <h4 className="p-0">{cuisines.join(",")}</h4>
-            <h4>{lastMileTravelString} </h4>
+        <div className="flex flex-col overflow-hidden w-48 p-2 m-2 rounded-sm hover:shadow-xl duration-300 font-poppins bg-white shadow-sm">
+            <img   className="w-full border rounded-sm" src={IMG_CDN_URL + cloudinaryImageId}/>
+            <span className="block font-bold text-lg mt-3 ">{name}</span>
+            <span className="mt-3 text-gray-600">{cuisines.join(", ")}</span>
+            <span
+        className="w-12 text-center mt-3 border rounded-md text-white"
+        style={
+          avgRating >= 4
+            ? { backgroundColor: "#48c479" }
+            : avgRating >= 3
+            ? { backgroundColor: "#DB7C38" }
+            : avgRating === "--"
+            ? { backgroundColor: "#48c479" }
+            : { backgroundColor: "#E31837" }
+        }
+      >
+        {avgRating} &#9733;
+      </span>
+      <div className="flex flex-row mt-5 ">
+        <span className="font-medium">{costForTwoString}</span>
+        <span className="font-medium">{deliveryTime} MINS</span>
+      </div>
             {/* <h5 className="font-bold">{user.name}</h5>               */}
         </div>
     )

@@ -73,10 +73,10 @@ const Body= () =>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.841561&lng=75.562731&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
         console.log(json);
-        console.log(json.data?.cards[1]?.data?.data?.cards);
-        //USE OPTIONAL CHAINING INSTEA
-        setRestaurantl(json.data?.cards[1].data?.data?.cards);
-        setFilteredRestaurants(json.data?.cards[1]?.data?.data?.cards);
+        console.log(json.data?.cards[0]?.data?.data?.cards);
+        //USE OPTIONAL CHAINING INSTEAd
+        setRestaurantl(json.data?.cards[0].data?.data?.cards);
+        setFilteredRestaurants(json.data?.cards[0]?.data?.data?.cards);
     }
     console.log("render");
     const isOnline = useOnline();
@@ -99,13 +99,14 @@ const Body= () =>{
     <Shimmer/> 
     ) : (
         <>  
+        <div className=" w-100px flex justify-center bg-pink-100">
             {console.log("inside body")}
            <div className="search-container p-5 bg-pink-50 my-2">
              <input 
                 data-testid="search-input"
                 type="text" 
                 className="focus:bg-cyan-50 p-1 m-1" 
-                placeholder="Search" 
+                placeholder="Search Restuarant" 
                 value={searchInput}
                 //onChange = {(e) => console.log(e.target.value)}
                 //onChange={(e)=>{
@@ -131,7 +132,7 @@ const Body= () =>{
                 setFilteredRestaurants(data);
             }}
             > 
-            Search
+            Search 
             </button>
             {/* <input value={user.name} onChange={
                 e => setUser({
@@ -139,6 +140,7 @@ const Body= () =>{
                     email: "new_email@gmail.com",
                 })
             }></input> */}
+           </div>
            </div>
   
            <div className="flex flex-wrap" data-testid="res-list">
